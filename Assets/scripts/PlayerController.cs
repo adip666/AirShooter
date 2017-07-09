@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     float moveHorizontal;
     float moveVertical;
     float StartAccelerationY;
+    Vector3 movement;
     void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -28,14 +29,17 @@ public class PlayerController : MonoBehaviour
     {
 #if UNITY_ANDROID
         moveHorizontal = Input.acceleration.x; // Lewo - Prawo
-        moveVertical = Input.acceleration.y - StartAccelerationY;
+        moveVertical = .15f + Input.acceleration.y;
         _rb.rotation = Quaternion.Euler(0.0f, 0.0f, _rb.velocity.x * -tilt*2);
-#else
-         moveHorizontal = Input.GetAxis("Horizontal");
+        movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+#endif
+
+#if UNITY_EDITOR
+        moveHorizontal = Input.GetAxis("Horizontal");
          moveVertical = Input.GetAxis("Vertical");
         _rb.rotation = Quaternion.Euler(0.0f, 0.0f, _rb.velocity.x * -tilt);
+        movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 #endif
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         _rb.velocity = movement * speed;
 
         _rb.position = new Vector3
@@ -44,7 +48,7 @@ public class PlayerController : MonoBehaviour
             0.0f,
             Mathf.Clamp(_rb.position.z, boundary.zMin, boundary.zMax)
         );
-        Debug.Log("horizontal: " + moveHorizontal + "vertical" + moveVertical);
+      
         //_rb.rotation = Quaternion.Euler(0.0f, 0.0f, _rb.velocity.x * -tilt);
     }
 }
