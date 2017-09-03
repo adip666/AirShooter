@@ -1,0 +1,70 @@
+# Max2Mtl Version 4.0 Mar 10th, 2001
+#
+# Multi/Sub Material__35 (7) to come 
+#
+newmtl FIATWING
+Ka  0.3 0.3 0.2
+Kd  0.3 0.3 0.2
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd FIAT-ATX.JPG
+bump FIAT-ABM.JPG
+#
+newmtl fiatcrom
+Ka  0.1 0.1 0.0
+Kd  0.1 0.1 0.0
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl FIATRIGT
+Ka  0.2 0.3 0.2
+Kd  0.2 0.3 0.2
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd FIAT-TXR.JPG
+bump FIAT-BMP.JPG
+#
+newmtl FIATLEFT
+Ka  0.2 0.3 0.2
+Kd  0.2 0.3 0.2
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd FIAT-TXL.JPG
+bump FIAT-BMP.JPG
+#
+newmtl fiattire
+Ka  0.2 0.2 0.2
+Kd  0.2 0.2 0.2
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+#
+newmtl FIATFLAP
+Ka  0.2 0.3 0.2
+Kd  0.2 0.3 0.2
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd FIAT-FLP.JPG
+#
+newmtl fiatglas
+Ka  0.1 0.2 0.0
+Kd  0.1 0.2 0.0
+Ks  1.0 1.0 1.0
+d  0.5
+Ns  0.5
+illum 2
+#
+# Multi/Sub Material__35 done 
+#
+# EOF
